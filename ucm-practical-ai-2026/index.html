@@ -6,9 +6,11 @@
   <title>Brent Stewart — Practical AI at UCM</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/white.min.css">
   <style>
-    :root { --accent: #f2a541; --muted: #9aa3ad; }
+    :root { --accent: #c2410c; --muted: #6b7280; --ink: #1f2937; }
+    .reveal { color: var(--ink); }
+    .reveal h1, .reveal h2, .reveal h3 { color: var(--ink); }
     .reveal { font-size: 34px; }
     .reveal h1, .reveal h2 { text-transform: none; letter-spacing: -0.01em; }
     .reveal h2 { color: var(--accent); margin-bottom: 0.6em; }
@@ -41,7 +43,7 @@
     .tl .yr { font-size: 0.6em; color: var(--muted); }
     .tl .nm { font-size: 0.8em; font-weight: 700; line-height: 1.15; }
     .tl .ex { font-size: 0.62em; color: var(--muted); margin-top: 4px; }
-    .tl .ex code { font-family: "SFMono-Regular", Menlo, Consolas, monospace; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+    .tl .ex code { font-family: "SFMono-Regular", Menlo, Consolas, monospace; background: rgba(0,0,0,0.06); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
     .tl .llm .ex code { color: var(--accent); }
     .tl .llm .dot { width: 36px; height: 36px; left: -18px; top: -18px; background: var(--accent); border-color: var(--accent); }
     .tl .llm .stem { background: var(--accent); }
@@ -63,9 +65,15 @@
     .statement .how { color: var(--muted); }
     .statement .what { color: var(--accent); }
 
+    .steps-title { font-size: 1.55em !important; }
+    .steps { display: grid; grid-template-columns: auto auto; justify-content: center; gap: 0 5em; text-align: left; counter-reset: step; margin-top: 0.4em; }
+    .steps ol { list-style: none; margin: 0; padding: 0; }
+    .steps li { counter-increment: step; display: flex; gap: 0.6em; align-items: baseline; margin: 0.45em 0; font-size: 1.15em; font-weight: 600; }
+    .steps li::before { content: counter(step); color: var(--accent); font-weight: 800; min-width: 1.3em; text-align: right; }
+
     .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
-    #qr { background: #fff; padding: 12px; border-radius: 6px; }
+    #qr { background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #e5e7eb; }
     .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5em; }
   </style>
 </head>
@@ -130,6 +138,26 @@
       Design instead of code. Unit tests that actually exist (I don't have to write them).
       Less time on infrastructure. Try new things and iterate faster than I could build normally.
     </aside>
+  </section>
+
+  <section>
+    <h2 class="steps-title">AI is in every step of how I build software</h2>
+    <div class="steps">
+      <ol>
+        <li class="fragment">Brainstorming</li>
+        <li class="fragment">Requirements</li>
+        <li class="fragment">Architecture</li>
+        <li class="fragment">UI/UX</li>
+        <li class="fragment">Code &amp; tests</li>
+      </ol>
+      <ol>
+        <li class="fragment">Debugging</li>
+        <li class="fragment">Code review</li>
+        <li class="fragment">Security</li>
+        <li class="fragment">Source control</li>
+        <li class="fragment">CI/CD</li>
+      </ol>
+    </div>
   </section>
 
   <section>
