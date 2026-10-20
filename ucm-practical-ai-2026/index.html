@@ -24,7 +24,8 @@
 
     .quote { font-size: 2.2em; font-weight: 700; line-height: 1.2; margin: 0 0 0.5em; }
     .quote .mark { color: var(--accent); }
-    .quote-by { font-size: 0.8em; color: var(--muted); }
+    .quote-wrap { display: inline-block; }
+    .quote-by { font-size: 0.8em; color: var(--muted); text-align: right; margin: 0; }
 
     /* Abstraction timeline with alternating callouts */
     .tl { position: relative; width: 1180px; height: 480px; margin: 0 auto; }
@@ -77,8 +78,10 @@
   </section>
 
   <section>
-    <p class="quote"><span class="mark">&ldquo;</span>The only constant is change.<span class="mark">&rdquo;</span></p>
-    <p class="quote-by">Attributed to Heraclitus, c. 500 BC</p>
+    <div class="quote-wrap">
+      <p class="quote"><span class="mark">&ldquo;</span>The only constant is change.<span class="mark">&rdquo;</span></p>
+      <p class="quote-by">&mdash; Heraclitus, 500 BC</p>
+    </div>
   </section>
 
   <section>
