@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI in Practice — Brent Stewart</title>
+  <title>Brent Stewart — Practical AI at UCM</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
@@ -12,10 +12,15 @@
     .reveal { font-size: 34px; }
     .reveal h1, .reveal h2 { text-transform: none; letter-spacing: -0.01em; }
     .reveal h2 { color: var(--accent); margin-bottom: 0.6em; }
-    .reveal .subtitle { color: var(--muted); font-size: 0.8em; }
     .reveal ul, .reveal ol { display: block; }
     .reveal li { margin: 0.35em 0; }
     .reveal .small { font-size: 0.7em; color: var(--muted); }
+
+    .intro { display: flex; gap: 1.6em; align-items: center; text-align: left; }
+    .intro img.portrait { width: 360px; height: 360px; object-fit: cover; border-radius: 50%; border: 6px solid var(--accent); margin: 0; flex-shrink: 0; }
+    .intro h1 { font-size: 1.8em; margin: 0 0 0.4em; }
+    .intro ul { margin: 0; font-size: 0.82em; }
+    .intro li { margin: 0.45em 0; }
 
     .timeline { display: flex; align-items: flex-end; gap: 6px; margin: 0.8em 0; }
     .era { flex: 1; text-align: left; border-top: 4px solid var(--muted); padding-top: 8px; }
@@ -34,10 +39,19 @@
 <div class="reveal"><div class="slides">
 
   <section>
-    <h1>AI in Practice</h1>
-    <p class="subtitle">A developer's view of where AI fits, and where it doesn't</p>
-    <p>Brent Stewart</p>
-    <p class="small">Practical AI · University of Central Missouri · October 21, 2026</p>
+    <div class="intro">
+      <img class="portrait" src="../PR-2020%20Square.jpg" alt="Brent Stewart">
+      <div>
+        <h1>Brent Stewart</h1>
+        <ul>
+          <li>Wrote my first program at age 10 on a Commodore 64 (with 64K of RAM)</li>
+          <li>Founded multiple software businesses</li>
+          <li>Co-organizer of the Kansas City .NET User Group</li>
+          <li>Speaker at developer conferences across the country</li>
+          <li>Maker who loves solving real-world problems with robots</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -103,6 +117,7 @@
       <div id="qr"></div>
       <div>
         <p><strong>Brent Stewart</strong></p>
+        <p><a href="https://linkedin.com/in/brentestewart">linkedin.com/in/brentestewart</a></p>
         <p><a href="https://brentstewart.net">brentstewart.net</a></p>
         <p><a href="https://github.com/brentestewart">github.com/brentestewart</a></p>
         <p class="small">These slides: brentstewart.net/talks/ucm-practical-ai-2026</p>
