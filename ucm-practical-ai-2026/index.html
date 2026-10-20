@@ -52,6 +52,13 @@
     .tl .stop.al-r .label { left: -12px; text-align: left; }
     .tl .tick { position: absolute; top: 254px; left: var(--x); width: 80px; margin-left: -40px; text-align: center; font-size: 0.45em; color: var(--muted); opacity: 0.7; }
 
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 0 2em; margin-top: 1em; }
+    .stat .num { font-size: 4.2em; font-weight: 800; line-height: 1; letter-spacing: -0.03em; }
+    .stat .num.hot { color: var(--accent); }
+    .stat .what { font-size: 0.85em; margin-top: 0.3em; }
+    .stat .sub { font-size: 0.65em; color: var(--muted); margin-top: 0.4em; }
+    .source { margin-top: 2.2em; font-size: 0.45em; color: var(--muted); }
+
     .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
     #qr { background: #fff; padding: 12px; border-radius: 6px; }
@@ -94,6 +101,23 @@
       <div class="stop up al-r fragment" style="--x:273px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1957</div><div class="nm">High-level languages</div><div class="ex"><code>letter = 'a'</code></div></div></div>
       <div class="stop up llm fragment" style="--x:1090px; --len:110px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">2022</div><div class="nm">Natural language</div><div class="ex"><code>"Add a login page to my app"</code></div></div></div>
     </div>
+  </section>
+
+  <section>
+    <h2>How fast it's happening</h2>
+    <div class="stats">
+      <div class="stat">
+        <div class="num hot">83%</div>
+        <div class="what">of developers already use AI</div>
+        <div class="sub">In under 4 years since ChatGPT launched</div>
+      </div>
+      <div class="stat fragment">
+        <div class="num">24%</div>
+        <div class="what">have employer-approved AI tools or guidance</div>
+        <div class="sub">Developers are moving faster than their companies</div>
+      </div>
+    </div>
+    <p class="source">Source: Stack Overflow Developer Survey 2026</p>
   </section>
 
   <section>
