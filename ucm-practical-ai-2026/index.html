@@ -26,12 +26,24 @@
     .quote .mark { color: var(--accent); }
     .quote-by { font-size: 0.8em; color: var(--muted); }
 
-    .timeline { display: flex; align-items: flex-end; gap: 6px; margin: 0.8em 0; }
-    .era { flex: 1; text-align: left; border-top: 4px solid var(--muted); padding-top: 8px; }
-    .era .yr { font-size: 0.55em; color: var(--muted); }
-    .era .nm { font-size: 0.62em; font-weight: 600; line-height: 1.2; }
-    .era.ai { border-color: var(--accent); }
-    .era.ai .nm { color: var(--accent); }
+    /* Abstraction timeline with alternating callouts */
+    .tl { position: relative; width: 1180px; height: 480px; margin: 0 auto; }
+    .tl .line { position: absolute; left: 0; right: 0; top: 240px; height: 4px; background: var(--muted); border-radius: 2px; }
+    .tl .stop { position: absolute; top: 242px; left: var(--x); width: 0; height: 0; }
+    .tl .dot { position: absolute; width: 22px; height: 22px; left: -11px; top: -11px; border-radius: 50%; background: #fff; border: 4px solid var(--muted); box-sizing: border-box; }
+    .tl .stem { position: absolute; left: -1px; width: 2px; height: var(--len); background: var(--muted); }
+    .tl .up .stem { top: calc(-11px - var(--len)); }
+    .tl .down .stem { top: 11px; }
+    .tl .label { position: absolute; width: 230px; left: -115px; text-align: center; }
+    .tl .up .label { bottom: calc(17px + var(--len)); }
+    .tl .down .label { top: calc(17px + var(--len)); }
+    .tl .yr { font-size: 0.6em; color: var(--muted); }
+    .tl .nm { font-size: 0.8em; font-weight: 700; line-height: 1.15; }
+    .tl .llm .dot { width: 36px; height: 36px; left: -18px; top: -18px; background: var(--accent); border-color: var(--accent); }
+    .tl .llm .stem { background: var(--accent); }
+    .tl .llm.up .stem { top: calc(-18px - var(--len)); }
+    .tl .llm.up .label { bottom: calc(24px + var(--len)); }
+    .tl .llm .nm { color: var(--accent); font-size: 1em; }
 
     .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
@@ -65,22 +77,16 @@
 
   <section>
     <h2>Every generation raised the level of abstraction</h2>
-    <div class="timeline">
-      <div class="era"><div class="yr">1940s</div><div class="nm">Machine code</div></div>
-      <div class="era"><div class="yr">1950s</div><div class="nm">Assembly</div></div>
-      <div class="era"><div class="yr">1972</div><div class="nm">C</div></div>
-      <div class="era"><div class="yr">1974</div><div class="nm">SQL</div></div>
-      <div class="era"><div class="yr">1991</div><div class="nm">Visual Basic</div></div>
-      <div class="era"><div class="yr">1995</div><div class="nm">Browser &amp; JavaScript</div></div>
+    <div class="tl">
+      <div class="line"></div>
+      <div class="stop up fragment" style="--x:70px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1940s</div><div class="nm">Machine code</div></div></div>
+      <div class="stop down fragment" style="--x:240px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1950s</div><div class="nm">Assembly</div></div></div>
+      <div class="stop up fragment" style="--x:410px; --len:150px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1972</div><div class="nm">C</div></div></div>
+      <div class="stop down fragment" style="--x:580px; --len:150px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1991</div><div class="nm">Visual Basic</div></div></div>
+      <div class="stop up fragment" style="--x:750px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1995</div><div class="nm">Browser &amp; JavaScript</div></div></div>
+      <div class="stop down fragment" style="--x:920px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1995–2000</div><div class="nm">Java &amp; C#</div></div></div>
+      <div class="stop up llm fragment" style="--x:1100px; --len:140px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">2022</div><div class="nm">LLMs: English</div></div></div>
     </div>
-    <div class="timeline">
-      <div class="era ai"><div class="yr">1990s</div><div class="nm">Word suggestions</div></div>
-      <div class="era ai"><div class="yr">2021</div><div class="nm">Line &amp; block completion</div></div>
-      <div class="era ai"><div class="yr">2022</div><div class="nm">Chat, copy &amp; paste</div></div>
-      <div class="era ai"><div class="yr">2023–24</div><div class="nm">AI writes the files</div></div>
-      <div class="era ai"><div class="yr">2025–26</div><div class="nm">Agents run the whole SDLC</div></div>
-    </div>
-    <p class="small">Decades between the early leaps. Five AI stages in about five years.</p>
   </section>
 
   <section>
