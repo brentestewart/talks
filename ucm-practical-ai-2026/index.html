@@ -71,6 +71,10 @@
     .steps li { counter-increment: step; display: flex; gap: 0.6em; align-items: baseline; margin: 0.45em 0; font-size: 1.15em; font-weight: 600; }
     .steps li::before { content: counter(step); color: var(--accent); font-weight: 800; min-width: 1.3em; text-align: right; }
 
+    .reveal ol.lessons { list-style: none; margin: 0.3em auto 0; padding: 0; display: inline-block; text-align: left; counter-reset: lesson; }
+    .lessons li { counter-increment: lesson; display: flex; gap: 0.7em; align-items: baseline; margin: 0.4em 0; font-size: 1.05em; font-weight: 600; }
+    .lessons li::before { content: counter(lesson); color: var(--accent); font-weight: 800; min-width: 1em; text-align: right; }
+
     .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
     #qr { background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #e5e7eb; }
@@ -148,16 +152,28 @@
         <li class="fragment">Requirements</li>
         <li class="fragment">Architecture</li>
         <li class="fragment">UI/UX</li>
-        <li class="fragment">Code &amp; tests</li>
+        <li class="fragment">Code</li>
       </ol>
       <ol>
+        <li class="fragment">Unit tests</li>
         <li class="fragment">Debugging</li>
-        <li class="fragment">Code review</li>
-        <li class="fragment">Security</li>
+        <li class="fragment">Code review &amp; security</li>
         <li class="fragment">Source control</li>
         <li class="fragment">CI/CD</li>
       </ol>
     </div>
+  </section>
+
+  <section>
+    <h2>What I've learned the hard way</h2>
+    <ol class="lessons">
+      <li class="fragment">It ignores instructions</li>
+      <li class="fragment">It goes down rabbit holes</li>
+      <li class="fragment">It guesses when you're vague</li>
+      <li class="fragment">It's confidently wrong</li>
+      <li class="fragment">It's only as good as its context</li>
+      <li class="fragment">It tells you what you want to hear</li>
+    </ol>
   </section>
 
   <section>
