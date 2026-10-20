@@ -34,16 +34,22 @@
     .tl .stem { position: absolute; left: -1px; width: 2px; height: var(--len); background: var(--muted); }
     .tl .up .stem { top: calc(-11px - var(--len)); }
     .tl .down .stem { top: 11px; }
-    .tl .label { position: absolute; width: 230px; left: -115px; text-align: center; }
+    .tl .label { position: absolute; width: 250px; left: -125px; text-align: center; }
     .tl .up .label { bottom: calc(17px + var(--len)); }
     .tl .down .label { top: calc(17px + var(--len)); }
     .tl .yr { font-size: 0.6em; color: var(--muted); }
     .tl .nm { font-size: 0.8em; font-weight: 700; line-height: 1.15; }
+    .tl .ex { font-size: 0.62em; color: var(--muted); margin-top: 4px; }
+    .tl .ex code { font-family: "SFMono-Regular", Menlo, Consolas, monospace; background: rgba(255,255,255,0.08); padding: 2px 8px; border-radius: 4px; white-space: nowrap; }
+    .tl .llm .ex code { color: var(--accent); }
     .tl .llm .dot { width: 36px; height: 36px; left: -18px; top: -18px; background: var(--accent); border-color: var(--accent); }
     .tl .llm .stem { background: var(--accent); }
     .tl .llm.up .stem { top: calc(-18px - var(--len)); }
     .tl .llm.up .label { bottom: calc(24px + var(--len)); }
-    .tl .llm .nm { color: var(--accent); font-size: 1em; }
+    .tl .llm .nm { color: var(--accent); font-size: 1em; white-space: nowrap; }
+    .tl .llm .label { width: 320px; left: -160px; }
+    .tl .stop.al-r .label { left: -12px; text-align: left; }
+    .tl .tick { position: absolute; top: 254px; left: var(--x); width: 80px; margin-left: -40px; text-align: center; font-size: 0.45em; color: var(--muted); opacity: 0.7; }
 
     .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
@@ -76,16 +82,14 @@
   </section>
 
   <section>
-    <h2>Every generation raised the level of abstraction</h2>
+    <h2>The first new level of abstraction in 65 years</h2>
     <div class="tl">
       <div class="line"></div>
-      <div class="stop up fragment" style="--x:70px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1940s</div><div class="nm">Machine code</div></div></div>
-      <div class="stop down fragment" style="--x:240px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1950s</div><div class="nm">Assembly</div></div></div>
-      <div class="stop up fragment" style="--x:410px; --len:150px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1972</div><div class="nm">C</div></div></div>
-      <div class="stop down fragment" style="--x:580px; --len:150px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1991</div><div class="nm">Visual Basic</div></div></div>
-      <div class="stop up fragment" style="--x:750px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1995</div><div class="nm">Browser &amp; JavaScript</div></div></div>
-      <div class="stop down fragment" style="--x:920px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1995–2000</div><div class="nm">Java &amp; C#</div></div></div>
-      <div class="stop up llm fragment" style="--x:1100px; --len:140px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">2022</div><div class="nm">LLMs: English</div></div></div>
+      <div class="tick" style="--x:60px">1940</div><div class="tick" style="--x:311px">1960</div><div class="tick" style="--x:562px">1980</div><div class="tick" style="--x:813px">2000</div><div class="tick" style="--x:1065px">2020</div>
+      <div class="stop up fragment" style="--x:123px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1940s</div><div class="nm">Machine code</div><div class="ex"><code>10110000 01100001</code></div></div></div>
+      <div class="stop down fragment" style="--x:186px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1950s</div><div class="nm">Assembly</div><div class="ex"><code>MOV AL, 61h</code></div></div></div>
+      <div class="stop up al-r fragment" style="--x:273px; --len:90px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">1957</div><div class="nm">High-level languages</div><div class="ex"><code>letter = 'a'</code></div></div></div>
+      <div class="stop up llm fragment" style="--x:1090px; --len:110px"><div class="stem"></div><div class="dot"></div><div class="label"><div class="yr">2022</div><div class="nm">Natural language</div><div class="ex"><code>"Save the letter a"</code></div></div></div>
     </div>
   </section>
 
