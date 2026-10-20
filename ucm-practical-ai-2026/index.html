@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI in Practice — Brent Stewart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/theme/black.min.css">
+  <style>
+    :root { --accent: #f2a541; --muted: #9aa3ad; }
+    .reveal { font-size: 34px; }
+    .reveal h1, .reveal h2 { text-transform: none; letter-spacing: -0.01em; }
+    .reveal h2 { color: var(--accent); margin-bottom: 0.6em; }
+    .reveal .subtitle { color: var(--muted); font-size: 0.8em; }
+    .reveal ul, .reveal ol { display: block; }
+    .reveal li { margin: 0.35em 0; }
+    .reveal .small { font-size: 0.7em; color: var(--muted); }
+
+    .timeline { display: flex; align-items: flex-end; gap: 6px; margin: 0.8em 0; }
+    .era { flex: 1; text-align: left; border-top: 4px solid var(--muted); padding-top: 8px; }
+    .era .yr { font-size: 0.55em; color: var(--muted); }
+    .era .nm { font-size: 0.62em; font-weight: 600; line-height: 1.2; }
+    .era.ai { border-color: var(--accent); }
+    .era.ai .nm { color: var(--accent); }
+
+    .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
+    .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
+    #qr { background: #fff; padding: 12px; border-radius: 6px; }
+    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5em; }
+  </style>
+</head>
+<body>
+<div class="reveal"><div class="slides">
+
+  <section>
+    <h1>AI in Practice</h1>
+    <p class="subtitle">A developer's view of where AI fits, and where it doesn't</p>
+    <p>Brent Stewart</p>
+    <p class="small">Practical AI · University of Central Missouri · October 21, 2026</p>
+  </section>
+
+  <section>
+    <h2>Every generation raised the level of abstraction</h2>
+    <div class="timeline">
+      <div class="era"><div class="yr">1940s</div><div class="nm">Machine code</div></div>
+      <div class="era"><div class="yr">1950s</div><div class="nm">Assembly</div></div>
+      <div class="era"><div class="yr">1972</div><div class="nm">C</div></div>
+      <div class="era"><div class="yr">1974</div><div class="nm">SQL</div></div>
+      <div class="era"><div class="yr">1991</div><div class="nm">Visual Basic</div></div>
+      <div class="era"><div class="yr">1995</div><div class="nm">Browser &amp; JavaScript</div></div>
+    </div>
+    <div class="timeline">
+      <div class="era ai"><div class="yr">1990s</div><div class="nm">Word suggestions</div></div>
+      <div class="era ai"><div class="yr">2021</div><div class="nm">Line &amp; block completion</div></div>
+      <div class="era ai"><div class="yr">2022</div><div class="nm">Chat, copy &amp; paste</div></div>
+      <div class="era ai"><div class="yr">2023–24</div><div class="nm">AI writes the files</div></div>
+      <div class="era ai"><div class="yr">2025–26</div><div class="nm">Agents run the whole SDLC</div></div>
+    </div>
+    <p class="small">Decades between the early leaps. Five AI stages in about five years.</p>
+  </section>
+
+  <section>
+    <h2>When does AI actually fit?</h2>
+    <p class="big-q">"Should it always act this way?"</p>
+    <p>If yes, it's just software.</p>
+    <ul>
+      <li>Is the input messy or unstructured?</li>
+      <li>Is "mostly right" acceptable, or can a person review it?</li>
+      <li>Would a rule or formula do the job?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What to do next</h2>
+    <ol>
+      <li><strong>Work on a passion project.</strong> Intern somewhere or start a real app. Learn the whole SDLC with best practices and build a resume with actual code.</li>
+      <li><strong>Review open source projects.</strong> See how they organize code and set up unit tests.</li>
+      <li><strong>Connect with people in your target industry.</strong> Find a mentor.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What to learn along the way</h2>
+    <div class="cols">
+      <ul>
+        <li>Source control: branches, pull requests, good commits</li>
+        <li>Writing a spec before you build</li>
+        <li>Project structure and architecture</li>
+        <li>Testing: unit and integration</li>
+      </ul>
+      <ul>
+        <li>CI/CD: automated build, test, deploy</li>
+        <li>Deploying something people can use</li>
+        <li>Security basics: secrets, authentication</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Stay in touch</h2>
+    <div class="contact">
+      <div id="qr"></div>
+      <div>
+        <p><strong>Brent Stewart</strong></p>
+        <p><a href="https://brentstewart.net">brentstewart.net</a></p>
+        <p><a href="https://github.com/brentestewart">github.com/brentestewart</a></p>
+        <p class="small">These slides: brentstewart.net/talks/ucm-practical-ai-2026</p>
+      </div>
+    </div>
+  </section>
+
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  Reveal.initialize({ hash: true, transition: 'slide', width: 1280, height: 720 });
+  try {
+    new QRCode(document.getElementById('qr'), {
+      text: 'https://brentstewart.net/talks/ucm-practical-ai-2026/',
+      width: 220, height: 220
+    });
+  } catch (e) { /* QR is optional */ }
+</script>
+</body>
+</html>
