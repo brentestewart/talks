@@ -75,10 +75,14 @@
     .lessons li { counter-increment: lesson; display: flex; gap: 0.7em; align-items: baseline; margin: 0.4em 0; font-size: 1.05em; font-weight: 600; }
     .lessons li::before { content: counter(lesson); color: var(--accent); font-weight: 800; min-width: 1em; text-align: right; }
 
-    .big-q { font-size: 1.5em; font-weight: 700; color: var(--accent); margin: 0.4em 0; }
+    .reveal ol.plan { list-style: none; margin: 0.2em auto 0; padding: 0; display: inline-block; text-align: left; counter-reset: plan; }
+    .plan li { counter-increment: plan; display: grid; grid-template-columns: 1.3em auto; column-gap: 0.6em; margin: 0.55em 0; }
+    .plan li::before { content: counter(plan); color: var(--accent); font-weight: 800; font-size: 1.05em; text-align: right; grid-row: span 2; }
+    .plan .item { font-size: 1.05em; font-weight: 700; }
+    .plan .sub { font-size: 0.62em; color: var(--muted); margin-top: 0.15em; }
+
     .contact { display: flex; gap: 1.2em; align-items: center; justify-content: center; text-align: left; }
     #qr { background: #fff; padding: 12px; border-radius: 6px; border: 1px solid #e5e7eb; }
-    .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 1.5em; }
   </style>
 </head>
 <body>
@@ -185,40 +189,19 @@
   </section>
 
   <section>
-    <h2>When does AI actually fit?</h2>
-    <p class="big-q">"Should it always act this way?"</p>
-    <p>If yes, it's just software.</p>
-    <ul>
-      <li>Is the input messy or unstructured?</li>
-      <li>Is "mostly right" acceptable, or can a person review it?</li>
-      <li>Would a rule or formula do the job?</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>What to do next</h2>
-    <ol>
-      <li><strong>Work on a passion project.</strong> Intern somewhere or start a real app. Learn the whole SDLC with best practices and build a resume with actual code.</li>
-      <li><strong>Review open source projects.</strong> See how they organize code and set up unit tests.</li>
-      <li><strong>Connect with people in your target industry.</strong> Find a mentor.</li>
+    <h2>If I were starting today</h2>
+    <ol class="plan">
+      <li class="fragment"><div class="item">Learn how good software is built</div><div class="sub">Build something real &middot; Contribute to open source &middot; Intern or work with a company</div></li>
+      <li class="fragment"><div class="item">Learn to communicate clearly</div><div class="sub">Write the spec before you build &middot; Practice directing AI and reviewing what it gives you &middot; Explain your work out loud</div></li>
+      <li class="fragment"><div class="item">Build your network</div><div class="sub">Find a mentor &middot; Go to user groups and meetups &middot; Attend conferences</div></li>
     </ol>
-  </section>
-
-  <section>
-    <h2>What to learn along the way</h2>
-    <div class="cols">
-      <ul>
-        <li>Source control: branches, pull requests, good commits</li>
-        <li>Writing a spec before you build</li>
-        <li>Project structure and architecture</li>
-        <li>Testing: unit and integration</li>
-      </ul>
-      <ul>
-        <li>CI/CD: automated build, test, deploy</li>
-        <li>Deploying something people can use</li>
-        <li>Security basics: secrets, authentication</li>
-      </ul>
-    </div>
+    <aside class="notes">
+      1. Build something real (passion project or your own app): source control, specs, architecture, testing, CI/CD, deployment, security.
+         Open source: see how real projects organize code and set up tests.
+      2. The syntax used to be the hard part. Now the hard part is knowing exactly what you want and saying it clearly.
+         Explain your work: demos, user groups, presentations.
+      3. Mentor, KC .NET User Group and other local meetups, conferences.
+    </aside>
   </section>
 
   <section>
