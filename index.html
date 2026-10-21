@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Talks — Brent Stewart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1f2937;
+      --muted: #5b6472;
+      --paper: #ffffff;
+      --line: #e3e5ea;
+      --accent: #c2410c;
+
+      --ai: #c2410c;      --ai-bg: #fff3ea;
+      --apps: #3f3cbb;    --apps-bg: #f0f0ff;
+      --arch: #17734a;    --arch-bg: #ebf8f1;
+      --life: #9b2c63;    --life-bg: #fcf0f6;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: "IBM Plex Sans", system-ui, sans-serif; font-size: 16px; line-height: 1.5; }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
+
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+
+    header { padding: 48px 0 40px; }
+    .home { font-size: 0.95rem; color: var(--muted); text-decoration: none; }
+    .home:hover { color: var(--accent); }
+    h1 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: clamp(3.5rem, 11vw, 7.5rem); line-height: 0.9; letter-spacing: -0.045em; margin: 20px 0 16px; }
+    .intro { max-width: 34em; font-size: 1.1rem; color: var(--muted); margin: 0; }
+
+    .topics { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 28px 0 0; padding: 0; list-style: none; font-size: 0.95rem; color: var(--muted); }
+    .topics li { display: flex; align-items: center; gap: 8px; }
+    .swatch { width: 12px; height: 12px; border-radius: 3px; }
+
+    .deck { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 0 0 80px; margin: 0; list-style: none; }
+    .slide {
+      --c: var(--accent); --bg: #fff;
+      position: relative; display: flex; flex-direction: column; justify-content: space-between;
+      aspect-ratio: 16 / 9; padding: 18px 20px 20px; border-radius: 12px;
+      background: var(--bg); border: 1px solid color-mix(in srgb, var(--c) 22%, white);
+      text-decoration: none; overflow: hidden;
+      transition: transform 160ms ease, border-color 160ms ease;
+    }
+    .slide::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--c); }
+    .slide:hover { transform: translateY(-3px); border-color: var(--c); }
+    .ai   { --c: var(--ai);   --bg: var(--ai-bg); }
+    .apps { --c: var(--apps); --bg: var(--apps-bg); }
+    .arch { --c: var(--arch); --bg: var(--arch-bg); }
+    .life { --c: var(--life); --bg: var(--life-bg); }
+
+    .meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--c); font-weight: 500; }
+    .kind { color: var(--muted); font-weight: 400; }
+    .title { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.45rem; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 6px; }
+    .desc { font-size: 0.92rem; color: var(--muted); margin: 0; }
+
+    .featured { grid-column: span 2; grid-row: span 2; padding: 28px 32px 30px; }
+    .featured::before { width: 10px; }
+    .featured .meta { font-size: 0.95rem; }
+    .featured .title { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.02; letter-spacing: -0.035em; max-width: 13em; margin-bottom: 12px; }
+    .featured .desc { font-size: 1.05rem; max-width: 30em; }
+
+    @media (max-width: 900px) {
+      .deck { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .deck { grid-template-columns: 1fr; }
+      .featured { grid-column: auto; grid-row: auto; aspect-ratio: auto; min-height: 260px; padding: 22px 24px; }
+      .slide { aspect-ratio: auto; min-height: 170px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .slide { transition: none; }
+      .slide:hover { transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="home" href="https://brentstewart.net">brentstewart.net</a>
+      <h1>Talks</h1>
+      <p class="intro">Slides, demo code and resources from the talks I've given at conferences, user groups and classrooms.</p>
+      <ul class="topics" aria-label="Topics">
+        <li><span class="swatch" style="background: var(--ai)"></span>AI</li>
+        <li><span class="swatch" style="background: var(--apps)"></span>.NET and apps</li>
+        <li><span class="swatch" style="background: var(--arch)"></span>Architecture</li>
+        <li><span class="swatch" style="background: var(--life)"></span>Developer life</li>
+      </ul>
+    </header>
+
+    <ul class="deck">
+      <li class="featured-cell" style="display: contents">
+        <a class="slide ai featured" href="ucm-practical-ai-2026/">
+          <div class="meta"><span>AI</span><span class="kind">Slides</span></div>
+          <div>
+            <p class="title">Practical AI: How AI Is Changing Software Development</p>
+            <p class="desc">A guest talk at UCM on AI as the next level of programming abstraction</p>
+          </div>
+        </a>
+      </li>
+      <li style="display: contents"><a class="slide ai" href="https://github.com/brentestewart/Build-MCP-Talk">
+        <div class="meta"><span>AI</span><span class="kind">Code</span></div>
+        <div><p class="title">Building Custom MCP Servers</p><p class="desc">Giving AI tools new abilities with the Model Context Protocol</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide apps" href="https://github.com/brentestewart/Blazor-Components-Talk">
+        <div class="meta"><span>.NET and apps</span><span class="kind">Code</span></div>
+        <div><p class="title">Advanced Blazor Components</p><p class="desc">A slide deck built with the very components it teaches</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide apps" href="https://github.com/brentestewart/BlazorBasics">
+        <div class="meta"><span>.NET and apps</span><span class="kind">Code</span></div>
+        <div><p class="title">Blazor Basics</p><p class="desc">An introduction to Blazor, with slides, demo code and reference material</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide arch" href="https://github.com/brentestewart/Event-Sourcing-Talk">
+        <div class="meta"><span>Architecture</span><span class="kind">Code</span></div>
+        <div><p class="title">Event Sourcing in .NET</p><p class="desc">Code and docs for event-sourced applications</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide arch" href="https://github.com/brentestewart/exploring-dotnet-api-approaches">
+        <div class="meta"><span>Architecture</span><span class="kind">Code</span></div>
+        <div><p class="title">Exploring API Approaches in .NET</p><p class="desc">Comparing ways to build APIs</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide life" href="https://github.com/brentestewart/side-hustles-for-developers">
+        <div class="meta"><span>Developer life</span><span class="kind">Code</span></div>
+        <div><p class="title">Side Hustles for Developers</p><p class="desc">Turning your skills into extra income</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide ai" href="https://github.com/brentestewart/AI-Coding-Resources">
+        <div class="meta"><span>AI</span><span class="kind">Code</span></div>
+        <div><p class="title">AI Coding Resources</p><p class="desc">Reusable docs, patterns and sample code for AI-assisted development</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide ai" href="https://github.com/brentestewart/Vibe-Coding-Talk">
+        <div class="meta"><span>AI</span><span class="kind">Code</span></div>
+        <div><p class="title">Vibe Coding</p><p class="desc">Writing code without a safety net</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide apps" href="https://github.com/brentestewart/.NET-Maui-Talk">
+        <div class="meta"><span>.NET and apps</span><span class="kind">Code</span></div>
+        <div><p class="title">.NET MAUI</p><p class="desc">Building cross-platform apps with .NET MAUI</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide life" href="https://github.com/brentestewart/home-automation-talk">
+        <div class="meta"><span>Developer life</span><span class="kind">Code</span></div>
+        <div><p class="title">Automate All the Things</p><p class="desc">Home automation projects and lessons</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide arch" href="https://github.com/brentestewart/Messaging-Talk">
+        <div class="meta"><span>Architecture</span><span class="kind">Code</span></div>
+        <div><p class="title">Messaging Patterns</p><p class="desc">Patterns for message-based systems</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide arch" href="https://github.com/brentestewart/Demystifying-Dependency-Injection-Talk">
+        <div class="meta"><span>Architecture</span><span class="kind">Code</span></div>
+        <div><p class="title">Demystifying Dependency Injection</p><p class="desc">Code and slides</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide life" href="https://github.com/brentestewart/Happy-Developer-Talk">
+        <div class="meta"><span>Developer life</span><span class="kind">Code</span></div>
+        <div><p class="title">Productive Developer == Happy Developer</p><p class="desc">Habits and tools for a better developer experience</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide apps" href="https://github.com/brentestewart/UWP-Talk">
+        <div class="meta"><span>.NET and apps</span><span class="kind">Code</span></div>
+        <div><p class="title">Universal Windows Platform</p><p class="desc">Building apps for Windows 10</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide arch" href="https://github.com/brentestewart/Patterns-Talk">
+        <div class="meta"><span>Architecture</span><span class="kind">Code</span></div>
+        <div><p class="title">Practical Patterns for the Progressing Programmer</p><p class="desc">Design patterns that make a difference day to day</p></div>
+      </a></li>
+      <li style="display: contents"><a class="slide life" href="https://github.com/brentestewart/Power-Shell-Talk">
+        <div class="meta"><span>Developer life</span><span class="kind">Code</span></div>
+        <div><p class="title">PowerShell</p><p class="desc">Presentation and scripts</p></div>
+      </a></li>
+    </ul>
+  </div>
+</body>
+</html>
