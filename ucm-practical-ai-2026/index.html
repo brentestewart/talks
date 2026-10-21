@@ -123,6 +123,8 @@
     html.phone .plan .sub span + span::before { content: none; }
     html.phone .contact { flex-direction: column; gap: 0.8em; text-align: center; }
     html.phone .contact p { margin: 0.3em 0; }
+    html.phone .phone-notes { margin: 1.4em 0 0; padding: 0.7em 0.9em; background: #fff7ed; border-left: 4px solid var(--accent); border-radius: 6px; font-size: 0.85em; line-height: 1.4; text-align: left; white-space: pre-line; color: var(--ink); }
+    html.phone .phone-notes::before { content: "Notes"; display: block; font-weight: 700; color: var(--accent); margin-bottom: 0.3em; }
   </style>
 </head>
 <body>
@@ -283,11 +285,23 @@
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
 
+  // Private presenter link: add ?notes to the URL on a phone to see each
+  // slide's speaker notes right under it.
+  const showPhoneNotes = isPhone && new URLSearchParams(location.search).has('notes');
+  if (showPhoneNotes) {
+    document.querySelectorAll('.slides > section > aside.notes').forEach(aside => {
+      const box = document.createElement('div');
+      box.className = 'phone-notes';
+      box.textContent = aside.textContent.split('\n').map(line => line.trim()).filter(Boolean).join('\n');
+      aside.parentElement.appendChild(box);
+    });
+  }
+
   Reveal.initialize({
     hash: !isPhone,
     transition: 'slide',
     width: isPhone ? 420 : 1280,
-    height: isPhone ? 780 : 720,
+    height: isPhone ? (showPhoneNotes ? 1100 : 780) : 720,
     margin: isPhone ? 0.05 : 0.04,
     view: isPhone ? 'scroll' : null,
     scrollActivationWidth: null,
