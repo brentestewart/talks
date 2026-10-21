@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Speaker notes — Practical AI at UCM</title>
+  <style>
+    :root { --accent: #c2410c; --muted: #6b7280; --ink: #1f2937; --line: #e5e7eb; --note: #fff7ed; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 18px; line-height: 1.45; }
+    main { max-width: 640px; margin: 0 auto; padding: 20px 16px 60px; }
+    h1 { font-size: 1.3rem; margin: 0 0 4px; }
+    .lede { color: var(--muted); font-size: 0.9rem; margin: 0 0 20px; }
+    section { border-top: 1px solid var(--line); padding: 18px 0; }
+    .num { color: var(--accent); font-weight: 800; font-size: 0.85rem; }
+    h2 { font-size: 1.15rem; margin: 2px 0 8px; }
+    ul { margin: 0 0 8px; padding-left: 1.2em; }
+    li { margin: 2px 0; }
+    .onslide { color: var(--muted); font-size: 0.95rem; }
+    .notes { background: var(--note); border-left: 4px solid var(--accent); border-radius: 6px; padding: 10px 12px; margin-top: 8px; }
+    .notes ul { margin: 0; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Speaker notes</h1>
+  <p class="lede">Practical AI at UCM · 11 slides · scroll along as you click through</p>
+
+  <section>
+    <div class="num">Slide 1</div>
+    <h2>Intro: Brent Stewart</h2>
+    <ul class="onslide">
+      <li>First program at 10 on a Commodore 64 (64K of RAM)</li>
+      <li>Founded multiple software businesses</li>
+      <li>Co-organizer, Kansas City .NET User Group</li>
+      <li>Speaker at developer conferences across the country</li>
+      <li>Maker who loves solving real-world problems with robots</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num">Slide 2</div>
+    <h2>"The only constant is change." — Heraclitus</h2>
+    <div class="notes"><ul>
+      <li>"The one thing I've learned over my long career is..."</li>
+      <li>Bridge into the churn of the software industry: how fast everything moves, constant advancing</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 3</div>
+    <h2>The first new level of abstraction in 65 years</h2>
+    <ul class="onslide">
+      <li>Machine code (1940s) · Assembly (1950s) · High-level languages (1957) · Natural language (2022)</li>
+    </ul>
+    <div class="notes"><ul>
+      <li>Most change is constant motion; this is a shift in how we create software</li>
+      <li>Machine code: plugboards, then toggle switches one bit at a time</li>
+      <li>Assembly: words instead of numbers; the assembler was the first time software wrote software</li>
+      <li>FORTRAN: "you wrote the formula, the compiler figured out the steps"; punched cards (80 columns)</li>
+      <li>LLMs: describe the what, not the how. Karpathy: "The hottest new programming language is English"</li>
+      <li>If challenged: 4GLs and Prolog tried, but none changed how most developers write code</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 4</div>
+    <h2>How fast it's happening</h2>
+    <ul class="onslide">
+      <li>83% of developers already use AI (under 4 years since ChatGPT)</li>
+      <li>24% have employer-approved AI tools or guidance</li>
+    </ul>
+    <div class="notes"><ul>
+      <li>Your stories: employers embracing vs. shunning the tech</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 5</div>
+    <h2>I stopped focusing on the how. Now I focus on the what.</h2>
+    <div class="notes"><ul>
+      <li>Design instead of code</li>
+      <li>Unit tests that actually exist (I don't have to write them)</li>
+      <li>Less time on infrastructure</li>
+      <li>Try new things and iterate faster than I could build normally</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 6</div>
+    <h2>AI is in every step of how I build software</h2>
+    <ul class="onslide">
+      <li>Brainstorming · Requirements · Architecture · UI/UX · Code</li>
+      <li>Unit tests · Debugging · Code review &amp; security · Source control · Deployment</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num">Slide 7</div>
+    <h2>What I've learned the hard way</h2>
+    <ul class="onslide">
+      <li>It ignores instructions</li>
+      <li>It goes down rabbit holes (commit often)</li>
+      <li>It guesses when you're vague</li>
+      <li>It's confidently wrong</li>
+      <li>It's only as good as its context</li>
+      <li>It tells you what you want to hear</li>
+    </ul>
+    <div class="notes"><ul>
+      <li>Trust: like assembly to FORTRAN, we can't read everything, and LLMs aren't deterministic, so trust comes from tests, static analysis and specs</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 8</div>
+    <h2>Do you use AI outside of coding?</h2>
+    <div class="notes"><ul>
+      <li>Quick answers instead of Google</li>
+      <li>Research and learning</li>
+      <li>Business questions</li>
+      <li>Presentations (like this one)</li>
+      <li>Trip planning</li>
+      <li>Home tech support</li>
+      <li>Product design and CAD: the Fusion 360 story (built a part without touching the mouse; felt like first vibe coding)</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 9</div>
+    <h2>If I were starting today</h2>
+    <ul class="onslide">
+      <li>Learn how good software is built</li>
+      <li>Learn to communicate clearly</li>
+      <li>Build your network</li>
+    </ul>
+    <div class="notes"><ul>
+      <li>Build something real: source control, specs, architecture, testing, deployment, security</li>
+      <li>Open source: study large projects like the .NET source to see how real code is organized and tested</li>
+      <li>The syntax used to be the hard part. Now the hard part is knowing exactly what you want and saying it clearly</li>
+      <li>Explain your work: demos, user groups, presentations</li>
+      <li>Network: mentor, KC .NET User Group and other local meetups, conferences</li>
+    </ul></div>
+  </section>
+
+  <section>
+    <div class="num">Slide 10</div>
+    <h2>Questions?</h2>
+  </section>
+
+  <section>
+    <div class="num">Slide 11</div>
+    <h2>Stay in touch</h2>
+    <ul class="onslide">
+      <li>brentstewart.net · LinkedIn · GitHub · QR code to the slides</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>
