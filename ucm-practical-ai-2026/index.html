@@ -274,14 +274,17 @@
   document.documentElement.classList.toggle('phone', isPhone);
   phoneQuery.addEventListener('change', () => location.reload());
 
-  // On a phone the deck is read, not presented: scroll through the slides
-  // with everything visible instead of tapping through each reveal.
+  // On a phone the deck is read, not presented: scroll through the slides with
+  // everything visible, and always open on the first slide (no slide number in
+  // the URL, no restored scroll position from an earlier visit).
   if (isPhone) {
     document.querySelectorAll('.fragment').forEach(el => el.classList.remove('fragment'));
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   }
 
   Reveal.initialize({
-    hash: true,
+    hash: !isPhone,
     transition: 'slide',
     width: isPhone ? 420 : 1280,
     height: isPhone ? 780 : 720,
@@ -290,6 +293,13 @@
     scrollActivationWidth: null,
     plugins: window.RevealNotes ? [RevealNotes] : []
   });
+  if (isPhone) {
+    Reveal.on('ready', () => {
+      Reveal.slide(0);
+      const viewport = document.querySelector('.reveal-viewport');
+      if (viewport) viewport.scrollTop = 0;
+    });
+  }
   try {
     new QRCode(document.getElementById('qr'), {
       text: 'https://brentstewart.net/talks/ucm-practical-ai-2026/',
